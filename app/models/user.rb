@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  has_many :foods
+  has_many :exercises
+
+  validates_presence_of :password, :on => :create
+  validates_presence_of :email
+  validates_uniqueness_of :email
 
   enum role: [:user, :admin]
 after_initialize :set_default_role, :if => :new_record?
