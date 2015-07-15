@@ -1,8 +1,7 @@
 <%= render "layouts/errors", :object => @food %>
 
-<%= form_for @food do |f| %>
-  <%= f.label :food %>
+<%= bootstrap_form_for @food do |f| %>
   <%= f.text_field :food %>
-  <%= f.label :calories %>
   <%= f.text_field :calories %>
+  <%= f.submit class: "btn btn-success" %>
 <% end %>

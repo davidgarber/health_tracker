@@ -1,3 +1,5 @@
+<div class="col-md-5">
+
 <h1>Food</h1>
 
 <ul>
@@ -5,3 +7,6 @@
     <li><%= link_to food.food, food_path(food) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Add a new food", new_food_path, :class => "btn btn-success btn-sm" %>
+</div>

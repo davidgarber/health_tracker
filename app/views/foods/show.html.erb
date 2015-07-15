@@ -1,4 +1,4 @@
-<h1><%= @food.food %></h1>
+<h1><%= @food.food %>  <span><small>Calories: <%= @food.calories %></small></span></h1>
 
 <p>
   <%= link_to "Edit", edit_food_path(@food) %>
@@ -9,6 +9,7 @@
                                   :method => "delete"} %>
 </p>
 
+
 <p>
-  <%= link_to "Return to food", food_path %>
+  <%= link_to "Return to food", foods_path %>
 </p>
