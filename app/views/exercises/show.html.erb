@@ -1,0 +1,15 @@
+<h1><%= @exercise.name %>  <span><small>Calories: <%= @exercise.calories_burned %></small></span></h1>
+
+<p>
+  <%= link_to "Edit", edit_exercise_path(@exercise) %>
+</p>
+<p>
+  <%= link_to "Delete", exercise_path(@exercise),
+                        :data => {:confirm => "Are you sure?",
+                                  :method => "delete"} %>
+</p>
+
+
+<p>
+  <%= link_to "Return to exercise", exercises_path %>
+</p>

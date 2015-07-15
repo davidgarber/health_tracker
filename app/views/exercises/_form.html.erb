@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @exercise %>
+
+<%= bootstrap_form_for @exercise do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :calories_burned %>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>

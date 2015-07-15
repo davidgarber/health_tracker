@@ -1,10 +1,12 @@
 <div class="col-md-5">
 
 <h1>Food</h1>
+<hr>
 
-<ul>
+<ul class="list-unstyled">
   <% @foods.each do |food| %>
-    <li><%= link_to food.food, food_path(food) %></li>
+    <li class="lead text-info"><%= link_to food.food, food_path(food) %>&nbsp;&nbsp;<%= food.calories %> cals&nbsp;&nbsp;<a href="#"><span class ="text-warning"><small>( Eat This )</small></span></a>
+    </li>
   <% end %>
 </ul>
 
