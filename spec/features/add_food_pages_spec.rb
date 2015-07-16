@@ -14,4 +14,14 @@ describe "the add a food process" do
     click_on 'Create Food'
     expect(page).to have_content 'Banana'
   end
+
+  it "errors if fields left blank", js: true do
+    visit new_user_session_path
+    user = FactoryGirl.create(:user)
+    login(user)
+    click_on 'Profile'
+    click_link 'Add a new food'
+    click_on 'Create Food'
+    expect(page).to have_content 'errors'
+  end
 end
