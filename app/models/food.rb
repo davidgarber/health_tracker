@@ -4,11 +4,4 @@ class Food < ActiveRecord::Base
   validates :food, :presence => true
   validates :calories, :presence => true
 
-  def all_users
-    users = self.users
-    users.each do |user|
-      user.email
-    end
-  end
-
 end

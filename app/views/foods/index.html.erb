@@ -4,10 +4,7 @@
 <hr>
 
 <ul class="list-unstyled">
-  <% @foods.each do |food| %>
-    <li class="lead text-info"><%= link_to food.food, food_path(food) %>&nbsp;&nbsp;<%= food.calories %> cals&nbsp;&nbsp;<a href="#"><span class ="text-warning"><small>( Eat This )</small></span></a>
-    </li>
-  <% end %>
+  <%= render(@foods) %>
 </ul>
 
 <%= link_to "Add a new food", new_food_path, :class => "btn btn-success btn-sm" %>
