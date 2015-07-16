@@ -1,47 +1,55 @@
 <div class="row clearfix">
-  <div class="col-md-1">
-  </div>
+  <div class="col-md-1"></div>
   <div class="col-md-4">
-    <div class="panel panel-info">
+    <div class="panel panel-danger">
       <div class="panel-heading">
         <h3 class="panel-title">Calories Consumed</h3>
       </div>
       <div class="panel-body">
-        <!-- ## code for calories consumed -->
+<!-- ## code for calories consumed -->
         <%= link_to "Eat Some Food", foods_path, class: "foods_link", remote: true %>
 
-        <!-- foods eaten -->
+<!-- foods eaten -->
         <% @foods.each do |food| %>
-          <% if food.user_id == @user.id %>
-          <%= food.food %>
-          <% end %>
+        <% if food.user_id == @user.id %>
+        <%= food.food %>
+        <% end %>
         <% end  %>
 
         <div class="foods" id="foods">
           <h4>Foods</h4>
-
-
         </div>
-        <!-- # code for each food added -->
+
+<!-- # code for each food added -->
       </div>
-      <%= link_to "Add a new food", new_food_path, :class => "btn btn-success btn-sm" %>
+
+      <%= link_to "Add a new food", new_food_path, :class => "btn btn-danger btn-sm" %>
 
     </div>
   </div>
-  <div class="col-md-2">
-  </div>
+  <div class="col-md-2"></div>
   <div class="col-md-4">
     <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">Calories Burned</h3>
       </div>
       <div class="panel-body">
-        <!-- # code for calories burned -->
-        <%= link_to "Enter Exercise", exercises_path %>
-        <!-- # code for each exercise added -->
+<!-- # code for calories burned -->
+<!-- # code for each exercise added -->
+        <%= link_to "Enter Exercise", exercises_path, class: "exercises_link", remote: true %>
+        <% @exercises.each do |exercise| %>
+        <% if exercise.user_id == @user.id %>
+        <%= exercise.name %>
+        <% end %>
+        <% end  %>
+        <div class="exercises" id="exercises">
+          <h4>Exercises</h4>
+
+        </div>
+
       </div>
+      <%= link_to "Add a new exercise", new_exercise_path, :class => "btn btn-success btn-sm" %>
     </div>
   </div>
-  <div class="col-md-1">
-  </div>
+  <div class="col-md-1"></div>
 </div>

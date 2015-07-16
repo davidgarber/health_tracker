@@ -2,10 +2,8 @@
 
 <h1>Exercise</h1>
 
-<ul>
-  <% @exercises.each do |exercise| %>
-    <li><%= link_to exercise.name, exercise_path(exercise) %></li>
-  <% end %>
+<ul class="list-unstyled">
+  <%= render(@exercises) %>
 </ul>
 
 <%= link_to "Add a new exercise", new_exercise_path, :class => "btn btn-success btn-sm" %>

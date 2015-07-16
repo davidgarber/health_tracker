@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @foods = Food.all
+    @exercises = Exercise.all
   end
 
   def update
