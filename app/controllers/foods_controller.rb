@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
   def index
-    @users = User.find(params[:user_id])
     @foods = Food.all
   end
 
@@ -28,6 +27,7 @@ class FoodsController < ApplicationController
 
   def update
     @food = Food.find(params[:id])
+    @food.user_id = current_user.id
     if @food.update(food_params)
       redirect_to foods_path
     else

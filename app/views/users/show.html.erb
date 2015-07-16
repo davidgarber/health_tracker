@@ -8,8 +8,14 @@
       </div>
       <div class="panel-body">
         <!-- ## code for calories consumed -->
-        <%= link_to "Enter Food", user_foods_path(current_user.id) %>
+        <%= link_to "Enter Food", foods_path %>
 
+        foods eaten
+        <% @foods.each do |food| %>
+          <% if food.user_id == @user.id %>
+          <%= food.name %>
+          <% end %>
+        <% end  %>
         <!-- # code for each food added -->
       </div>
     </div>
@@ -23,7 +29,7 @@
       </div>
       <div class="panel-body">
         <!-- # code for calories burned -->
-        <a href="/exercises">Add Exercise</a>
+        <%= link_to "Enter Exercise", exercises_path %>
         <!-- # code for each exercise added -->
       </div>
     </div>

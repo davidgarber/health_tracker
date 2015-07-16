@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :foods
-  has_many :exercises
+  has_and_belongs_to_many :foods
+  has_and_belongs_to_many :exercises
 
   validates_presence_of :password, :on => :create
   validates_presence_of :email

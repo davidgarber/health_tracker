@@ -1,5 +1,5 @@
 <h1><%= @food.food %>  <span><small>Calories: <%= @food.calories %></small></span></h1>
-
+<%= @food.user_id %>
 <p>
   <%= link_to "Edit", edit_food_path(@food) %>
 </p>
@@ -8,7 +8,7 @@
                         :data => {:confirm => "Are you sure?",
                                   :method => "delete"} %>
 </p>
-
+<%= link_to "eat this", food_path(@food) %>
 
 <p>
   <%= link_to "Return to food", foods_path %>
