@@ -1,0 +1,10 @@
+
+<table class="table table-striped table-hover ">
+
+  <tbody>
+    <tr class="success">
+      <td><%= link_to exercise.name, exercise_path(exercise), class: "exercises" %></td>
+      <td>(-<%= exercise.calories_burned %>)</td>
+    </tr>
+  </tbody>
+</table>
