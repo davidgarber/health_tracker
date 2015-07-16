@@ -12,6 +12,18 @@ after_initialize :set_default_role, :if => :new_record?
 def set_default_role
     self.role ||= :user
 end
+
+def calorie_total
+  if (self.foods.size > 0)
+  calorie_total = 0
+  self.foods.each do |food|
+    calorie_total += food.calories
+  end
+  else
+  calorie_total = 0
+  end
+  return calorie_total
+end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20150716181920) do
   end
 
   create_table "exercises_users", id: false, force: :cascade do |t|
-    t.integer "food_id"
+    t.integer "exercise_id"
     t.integer "user_id"
   end
 
-  add_index "exercises_users", ["food_id"], name: "index_exercises_users_on_food_id", using: :btree
+  add_index "exercises_users", ["exercise_id"], name: "index_exercises_users_on_exercise_id", using: :btree
   add_index "exercises_users", ["user_id"], name: "index_exercises_users_on_user_id", using: :btree
 
   create_table "foods", force: :cascade do |t|
